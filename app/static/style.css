@@ -1,0 +1,26 @@
+body{
+	background-color: #ffffff;
+}
+
+h1{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.links{
+	text-align: center;
+
+}
+
+.btnn{
+	width: 150px;
+	background: forestgreen;
+}
+#editor{
+	background-color: #ffffff
+}
+.divv{
+	align-items: center;
+	border: 1px solid;
+	padding: 20px
+}
