@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>One Million</title>
+	<title>Add Topic</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   		<a class="navbar-brand" href="{{ url_for("home") }}"> FAreS </a>
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,41 +32,17 @@
 
   		</div>
 	</nav>
-
 	<div class="container">
-		<div class="header"><h5><b>Devloped by: </b> Fares AbuAmin </h5></div>
-		<h1>One Million</h1>
-		<div class="links">
-			<a href="#">Member</a>
-			<a href="#">Profile</a>
-		</div>
-		<div class="table-responsive">
-			<table class="table table-striped">
-				<br>
-				<a class="btn btn-info btn-lg btnn" href="topic/add">Create Post</a>
-				<br><br>
-				<thead class="thead-inverse">
-					
-					<tr>
-						<th width="70%">Title</th>
-						<th width="10%">Edit</th>
-						<th width="10%">Delete</th>
-                        <th width="10%">View</th>
-					</tr>
-					{% for post in posts %}
-					<tr>
-						<td>{{post.title}}</td>
-                        <td><a href="topic/update/{{ post.id }}">edit</a></td>
-                        <td><a href="{{ url_for("topic_delete", id = post.id)}}">delete</a></td>
-                        <td><a href="topic/view/{{ post.id }}">view</a></td>
+		<div class="col-md-12 divv">
+			<h1>{{ post.title }}</h1>
+            <p>{{ post.body }}</p>
+            <div class="links">
+                <a href="{{ url_for("topic_update", id = post.id)}}">edit</a>
+                <a href="{{ url_for("topic_delete", id = post.id)}}">delete</a>
+            </div>
 
-					</tr>
-					{% endfor %}
-				</thead>
-			</table>
-		</div>
-		<div class="footer">Devloped by: </b> Fares AbuAmin </h5></div>
 
+		</div>
 	</div>
 
 </body>

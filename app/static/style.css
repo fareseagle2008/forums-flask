@@ -5,6 +5,7 @@ body{
 h1{
 	text-align: center;
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .links{
@@ -20,7 +21,11 @@ h1{
 	background-color: #ffffff
 }
 .divv{
+	margin-top: 20px;
 	align-items: center;
 	border: 1px solid;
 	padding: 20px
+}
+.divv p{
+	text-align: center;
 }
