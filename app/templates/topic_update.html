@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add Topic</title>
+	<title>Update Topic</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
 	<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
@@ -10,7 +10,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   		<a class="navbar-brand" href="{{ url_for("home") }}"> FAreS </a>
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
 
   		</button>
 
@@ -35,17 +35,17 @@
 	</nav>
 	<div class="container">
 		<div class="col-md-12 divv">
-			<h1>Add Topic</h1>
-			<form action="{{ url_for('topic_add') }}" method="post">
+			<h1>Update Topic</h1>
+			<form action="{{ url_for('topic_update', id = post.id) }}" method="post">
 	  			<div class="form-group">
 	    			<label><h3>Title</h3></label>
-	    			<input type="text" class="form-control"  name="title" placeholder="Enter Title">
+	    			<input type="text" class="form-control"  name="title" value="{{ post.title }}">
 	  			</div>
 	  			<div class="form-group">
 	    			<label><h3>Body</h3></label>
-	    			<textarea id = "editor" class="form-control" name="body" placeholder="Enter Body"></textarea>
+	    			<textarea id = "editor" class="form-control" name="body" >{{ post.body }}</textarea>
 	  			</div>
-	  			<input type="submit" class="btn btn-primary btn-block" value="Create">
+	  			<input type="submit" class="btn btn-primary btn-block" value="Update">
 			</form>
 		</div>
 	</div>
